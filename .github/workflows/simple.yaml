@@ -26,7 +26,7 @@ jobs:
                 slice: ["a", "b"]
                 chunk: [1, 2]
         steps:
-            - run: Echo "Job-2-Matrix step 0 slice ${{ matrix.slice }} chunk ${{ matrix.chunk }}"
+            - run: echo "Job-2-Matrix step 0 slice ${{ matrix.slice }} chunk ${{ matrix.chunk }}"
 
     Job-3-Call-Workflow:
         uses: ./.github/workflows/called.yaml
