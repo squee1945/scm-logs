@@ -1,0 +1,24 @@
+name: called-workflow
+
+on:
+    workflow_call:
+        inputs:
+            username:
+                description: A username passed from the caller workflow
+                default: johndoe
+                required: false
+                type: string
+
+jobs:
+    Called-Job-0:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "called-workflow Called-Job-0 Step 0 username ${{ inputs.username }}"
+
+    Called-Job-1-Call-Workflow:
+        strategy:
+            matrix:
+                invocation: [1, 2]
+        uses: ./.github/workflows/called-2.yaml@main
+        with:
+            invocation: ${{ matrix.invocation }}
