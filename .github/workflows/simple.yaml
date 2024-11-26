@@ -29,6 +29,6 @@ jobs:
             - run: Echo "Job-2-Matrix step 0 slice ${{ matrix.slice }} chunk ${{ matrix.chunk }}"
 
     Job-3-Call-Workflow:
-        uses: ./.github/workflows/called.yaml@main
+        uses: ./.github/workflows/called.yaml
         with:
             username: mona

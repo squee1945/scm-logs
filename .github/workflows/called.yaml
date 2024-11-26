@@ -19,6 +19,6 @@ jobs:
         strategy:
             matrix:
                 invocation: [1, 2]
-        uses: ./.github/workflows/called-2.yaml@main
+        uses: ./.github/workflows/called-2.yaml
         with:
             invocation: ${{ matrix.invocation }}
