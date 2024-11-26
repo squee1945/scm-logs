@@ -15,7 +15,7 @@ jobs:
         steps:
             - run: echo "called-workflow Called-Job-0 Step 0 username ${{ inputs.username }}"
 
-    Called-Job-1-Call-Workflow:
+    Called-Job-1-Call:
         strategy:
             matrix:
                 invocation: [1, 2]
